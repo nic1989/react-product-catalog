@@ -21,9 +21,11 @@ const ProductViewList = (props) => {
                             <p className="fs-xsmall"><strong>Rating:</strong> {item.rating}</p>
                         </div>
                     </div>
-                    <div className="d-flex justify-content-center align-items-center pt-1">
-                        <button onClick={() => manageAddToCart(item)} className="add-to-cart">Add to Cart</button>
-                    </div>
+                    {item.stock > 0 &&
+                        <div className="d-flex justify-content-center align-items-center pt-1">
+                            <button onClick={() => manageAddToCart(item)} className="add-to-cart">Add to Cart</button>
+                        </div>
+                    }
                 </div>
             </div>
         </div>
